@@ -1,0 +1,136 @@
+<div class="act-step reveal reveal-delay-1">
+        <div class="act-step-header">
+          <div class="act-step-num">1단계</div>
+          <div class="act-step-title">스마트폰으로 접속하기</div>
+        </div>
+        <div class="act-qr-grid">
+          <div class="act-qr-item">
+            <div class="act-qr-class-badge badge-26">1-1반</div>
+            <div class="act-qr-img" style="display:flex; align-items:center; justify-content:center; color:#ddd; font-size:0.8rem;">[QR코드 위치]</div>
+            <div class="act-qr-hint">Padlet 접속</div>
+          </div>
+          <div class="act-qr-item">
+            <div class="act-qr-class-badge badge-27">1-2반</div>
+            <div class="act-qr-img" style="display:flex; align-items:center; justify-content:center; color:#ddd; font-size:0.8rem;">[QR코드 위치]</div>
+            <div class="act-qr-hint">Padlet 접속</div>
+          </div>
+          <div class="act-qr-item">
+            <div class="act-qr-class-badge badge-28">1-3반</div>
+            <div class="act-qr-img" style="display:flex; align-items:center; justify-content:center; color:#ddd; font-size:0.8rem;">[QR코드 위치]</div>
+            <div class="act-qr-hint">Padlet 접속</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="act-step reveal reveal-delay-2">
+        <div class="act-step-header">
+          <div class="act-step-num">2단계</div>
+          <div class="act-step-title">나의 $f(x)$ 설계하기 <span class="anon-badge">익명보장</span></div>
+        </div>
+        <div class="act-fx-grid">
+          <div class="act-fx-box input-box">
+            <div class="fx-label">INPUT</div>
+            <div class="fx-title">현재 나의 상태</div>
+            <div class="fx-examples">
+              <div class="fx-ex">"수학 시간만 되면 졸린 나"</div>
+              <div class="fx-ex">"공식은 알지만 적용이 안 되는 나"</div>
+            </div>
+          </div>
+          <div class="act-fx-arrow">→</div>
+          <div class="act-fx-box func-box">
+            <div class="fx-label">FUNCTION</div>
+            <div class="fx-title">이지수학 $f(x)$</div>
+            <div class="fx-examples">
+              <div class="fx-ex">포기하지 않는 끝장 설명</div>
+              <div class="fx-ex">친구와 함께하는 협동 학습</div>
+            </div>
+          </div>
+          <div class="act-fx-arrow">→</div>
+          <div class="act-fx-box output-box">
+            <div class="fx-label">OUTPUT</div>
+            <div class="fx-title">1학기 말 나의 모습</div>
+            <div class="fx-examples">
+              <div class="fx-ex">"모르는 걸 질문할 용기가 생긴 나"</div>
+              <div class="fx-ex">"수학의 재미를 조금은 알게 된 나"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="act-footer-msg reveal reveal-delay-3">
+        💡 여러분이 입력한 <strong>INPUT</strong>과 <strong>OUTPUT</strong>은 선생님이 수업을 구성하는 데 <br>
+        가장 중요한 자료로 활용됩니다. 우리 함께 멋진 <strong>결과값</strong>을 만들어봐요!
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="supplies">
+  <div class="container">
+    <div class="section-tag">06 — Supplies</div>
+    <h2 class="section-title">수업 준비물</h2>
+    <div class="supplies-grid">
+      <div class="supply-card reveal">
+        <div class="supply-emoji">📖</div>
+        <div class="supply-name">교과서</div>
+        <div class="supply-desc">대수 (미래엔)</div>
+      </div>
+      <div class="supply-card reveal reveal-delay-1">
+        <div class="supply-emoji">📔</div>
+        <div class="supply-name">배움노트</div>
+        <div class="supply-desc">개념 정리 및 오답</div>
+      </div>
+      <div class="supply-card reveal reveal-delay-2">
+        <div class="supply-emoji">🖋️</div>
+        <div class="supply-name">필기도구</div>
+        <div class="supply-desc">3색 볼펜 & 샤프</div>
+      </div>
+      <div class="supply-card reveal reveal-delay-3">
+        <div class="supply-emoji">📐</div>
+        <div class="supply-name">수정테이프</div>
+        <div class="supply-desc">깔끔한 노트 정리용</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">이지수학</div>
+    <p class="footer-sub">지치지 않는 수학의 즐거움, 1년 동안 함께 달려봅시다! 🚀</p>
+    <a href="#" class="cta-btn">선생님께 질문하기</a>
+    <div class="footer-copy">© 2026 Easy Math Education. Designed for the Future.</div>
+  </div>
+</footer>
+
+<script>
+  const observerOptions = {
+    threshold: 0.15
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal').forEach(el => {
+    observer.observe(el);
+  });
+
+  // 네비게이션 부드러운 이동 (Safari 대응 등)
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      document.querySelector(targetId).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
